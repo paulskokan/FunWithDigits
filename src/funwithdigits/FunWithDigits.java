@@ -30,7 +30,7 @@ public class FunWithDigits {
         System.out.println("How many Numbers would you like this broken into?");
         String numOfNums = scanner.nextLine();
         
-        System.out.println("Would you like to allow duplicates digits in numbers (y/n)?");
+        System.out.println("Would you like to allow duplicate digits in numbers (y/n)?");
         String dupes = scanner.nextLine();
         
         // Take input and convert array 
