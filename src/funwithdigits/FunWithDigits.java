@@ -21,6 +21,8 @@ public class FunWithDigits {
      * 
      */
     public static void main(String[] args) {
+        // Input maybe able to be read straight into Integers rather than reading as a String,
+        // and splitting on commas. I'd need to do some research
         System.out.println("Please enter digits seperated by commas:");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
@@ -48,13 +50,15 @@ public class FunWithDigits {
         Arrays.parallelSort(intArray);
         //System.out.println(Arrays.toString(intArray));
         
-        //put numbers into buckets, only allowing unique digits in buckets
+        //Initialize buckets
         List<List<Integer>> digitBuckets;
         digitBuckets = new ArrayList<>(Integer.parseInt(numOfNums));
         for(int i = 0; i < Integer.parseInt(numOfNums); i++) {
             List list = new ArrayList<Integer>();
             digitBuckets.add(list);
         }
+        
+        // Could probably initialize the buckets while building the number lists
         
         //Put the digits into the buckets, ensuring buckets only contain unique digits
         Integer intArrayPointer = 0;
@@ -74,6 +78,9 @@ public class FunWithDigits {
             }
         }
         //System.out.println(digitBuckets);
+        
+        // Maybe able to combine the below function and above function
+        // to make less loop iterations
         
         //Pull the numbers out of the buckets and put back in Integers
         List<Double> finalNumbers = new ArrayList();
